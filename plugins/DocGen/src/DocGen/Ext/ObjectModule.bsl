@@ -86,7 +86,7 @@ Procedure Init(BSLParser) Export
 		|	Var Hooks;
 		|	Hooks = New Array;
 		|	// Hooks.Add(""VisitAssignStmt"");
-		|	// Hooks.Add(""AfterVisitAssignStmt"");
+		|	// Hooks.Add(""LeaveAssignStmt"");
 		|	...
 		|	Return Hooks;
 		|EndFunction // Hooks()
@@ -96,8 +96,8 @@ Procedure Init(BSLParser) Export
 		|// Procedure VisitAssignStmt(AssignStmt, Stack, Counters) Export
 		|// EndProcedure // VisitAssignStmt()
 		|
-		|// Procedure AfterVisitAssignStmt(AssignStmt, Stack, Counters) Export
-		|// EndProcedure // AfterVisitAssignStmt()
+		|// Procedure LeaveAssignStmt(AssignStmt, Stack, Counters) Export
+		|// EndProcedure // LeaveAssignStmt()
 		|
 		|#EndRegion // Hooks
 		|</pre>"
@@ -185,7 +185,7 @@ Procedure VisitPrepInst(PrepInst, Stack, Counters) Export
 		ElsIf RegionLevel = 1 Then
 			SubRegion = "";
 		EndIf;
-	EndIf; 
+	EndIf;
 EndProcedure // VisitPrepInst()
 
 Procedure VisitNewExpr(NewExpr, Stack, Counters) Export
